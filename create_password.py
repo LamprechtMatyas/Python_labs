@@ -6,12 +6,24 @@ def _main():
     print(passwd)
 
 
+# This function is really hard to understand and probably unnecessarily
+# complicated.
 def _create_password(passwd_length=10, num_special_chars=2):
     special_chars = ["!", "@", "#", "%", "*"]
     if num_special_chars > passwd_length:
+        # This is a place where you want to raise an exception. It's not a good
+        # idea to print() for a number of reasons:
+        #
+        #   - The program may have no stdout/stderr attached at all
+        #   - The output may get mixed with legitimate output (at least, always
+        #     write errors to stderr)
+        #   - The caller has no way of knowing that something bad happened,
+        #     users will have empty password set
+        #   - ...
         print("Number of special chars cant be greater than number of password length")
     all_chars = []
     for i in range(passwd_length):
+        # So you don't use any alphabet chars, just numbers and special chars?
         all_chars.append(random.randint(0, 9))
     rand_chars = []
     for i in range(num_special_chars):

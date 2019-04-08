@@ -7,7 +7,7 @@ def _my_map(arguments, fnc):
     new_list = []
     for item in arguments:
         new_list.append(fnc(item))
-    return new_list
+    return new_list # You could use a comprehension here
 
 
 def _times_five(a):
@@ -15,7 +15,7 @@ def _times_five(a):
 
 
 def _reverse_string(string):
-    return string[::-1]
+    return string[::-1] # Nice!
 
 
 if __name__ == "__main__":

@@ -11,6 +11,7 @@ def _fibo_gen(n):
     new = 1
     old = 0
     for i in range(n):
+        # You could say: old, new = new, new + old
         suma = new + old
         old = new
         new = suma
@@ -26,6 +27,7 @@ def _fib():
         new = suma
         yield suma
 
+# Unfinished? Missing some functions.
 
 if __name__ == "__main__":
     _main()

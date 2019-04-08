@@ -15,6 +15,8 @@ def _main():
     else:
         print("This is not palindrome")
 
+    # Or s == s[::-1] :)
+
 
 if __name__ == "__main__":
     _main()
